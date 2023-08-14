@@ -1,22 +1,3 @@
-repeat task.wait() until game:IsLoaded()
-
-
-local Players = game:GetService("Players")
-local Client = Players.LocalPlayer
-local TweenService = game:GetService("TweenService")
-local Workspace = game:GetService("Workspace")
-
-function GetDistance(Endpoint)
-    local HumanoidRootPart = Client.Character:FindFirstChild("HumanoidRootPart")
-    if typeof(Endpoint) == "Instance" then
-        Endpoint = Vector3.new(Endpoint.Position.X, HumanoidRootPart.Position.Y, Endpoint.Position.Z)
-    elseif typeof(Endpoint) == "CFrame" then
-        Endpoint = Vector3.new(Endpoint.Position.X, HumanoidRootPart.Position.Y, Endpoint.Position.Z)
-    end
-    local Magnitude = (Endpoint - HumanoidRootPart.Position).Magnitude
-    return Magnitude
-end
-
 local Neverlose_Main = loadstring(game:HttpGet("https://raw.githubusercontent.com/TrixDaBest11/Nitrogenerator/main/Modules/UISource.lua"))()
 local Win = Neverlose_Main:Window({
     Title = "Neverlose",
